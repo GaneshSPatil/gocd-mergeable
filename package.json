@@ -1,0 +1,37 @@
+{
+  "name": "gocd-mergable",
+  "version": "0.1.0",
+  "description": "A Github Action to verify changes done to the config repository",
+  "main": "index.js",
+  "scripts": {
+    "compile": "ncc build index.js",
+    "test": "nyc --reporter=html --reporter=text mocha --recursive",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaneshSPatil/gocd-mergable.git"
+  },
+  "keywords": [],
+  "author": "GaneshSPatil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GaneshSPatil/gocd-mergable/issues"
+  },
+  "homepage": "https://github.com/GaneshSPatil/gocd-mergable#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.1",
+    "@actions/github": "^2.0.1",
+    "glob": "^7.1.6",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5"
+  },
+  "devDependencies": {
+    "assertthat": "^5.1.0",
+    "coveralls": "^3.0.9",
+    "mocha": "^7.0.0",
+    "mock-fs": "^4.10.4",
+    "nock": "^11.7.2",
+    "nyc": "^15.0.0"
+  }
+}

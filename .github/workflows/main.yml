@@ -1,0 +1,15 @@
+on: [push, pull_request]
+
+jobs:
+  verify_config_repository:
+    runs-on: ubuntu-latest
+    name: verify config merge.
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+      - name: Verify Config Merge
+        uses: GaneshSPatil/gocd-mergable@master
+        with:
+          GOCD_SERVER_URL: 'https://build.gocd.org/go'
+          GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
+          GOCD_CONFIG_REPOSITORY_ID: 'plugin-api.go.cd-pipelines-yaml'

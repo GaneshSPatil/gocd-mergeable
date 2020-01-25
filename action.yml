@@ -1,0 +1,16 @@
+name: 'GoCD Verify Config Repository'
+description: 'Verifies the config repository changes can be merged with GoCD configuration'
+inputs:
+  GOCD_SERVER_URL:
+    description: 'The GoCD Server URL.'
+    required: true
+  GOCD_ADMIN_ACCESS_TOKEN:
+    description: 'The GoCD System Administrator access token.'
+    required: true
+  GOCD_CONFIG_REPOSITORY_ID:
+    description: 'The GoCD Config Repository Id.'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+
