@@ -1877,9 +1877,9 @@ const core = __webpack_require__(708);
 const util = __webpack_require__(562);
 const GoCD = __webpack_require__(836);
 
-const GoCDServerUrl            = core.getInput('GOCD_SERVER_URL');
-const GoCDAdminUserAccessToken = core.getInput('GOCD_ADMIN_ACCESS_TOKEN');
-const GoCDConfigRepositoryId   = core.getInput('GOCD_CONFIG_REPOSITORY_ID');
+const GoCDServerUrl            = core.getInput('GOCD_SERVER_URL', {required: true});
+const GoCDAdminUserAccessToken = core.getInput('GOCD_ADMIN_ACCESS_TOKEN', {required: true});
+const GoCDConfigRepositoryId   = core.getInput('GOCD_CONFIG_REPOSITORY_ID', {required: true});
 
 (async function () {
   try {
