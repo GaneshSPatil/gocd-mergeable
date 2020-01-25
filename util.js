@@ -9,13 +9,12 @@ function findGoCDConfigFilesForPlugin(pluginId) {
 
 function representResult(result) {
   if (result.valid) {
-    console.log("");
-    console.log("\x1b[32m", "Configurations can be merged successfully with GoCD!");
+    console.log("\x1b[32m", "Success! Configurations can be merged successfully with GoCD.");
     return;
   }
 
   const msg = [
-    '', `Failed to merge configurations with GoCD. Errors:`,
+    `Failed to merge configurations with GoCD. Errors:`,
     ...[].concat.apply([], result.errors.map((err, i) => `${i + 1}. ${err}`.replace('\n', '\n').split("\n"))), ''
   ];
 
