@@ -1,6 +1,6 @@
 {
   "name": "gocd-mergable",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A Github Action to verify changes done to the config repository",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/GaneshSPatil/gocd-mergable.git"
   },
-  "keywords": [],
+  "keywords": ["gocd", "mergable", "pipeline as code", "config repository"],
   "author": "GaneshSPatil",
   "license": "ISC",
   "bugs": {
