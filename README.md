@@ -86,3 +86,6 @@ jobs:
 ## License
 
 GoCD Mergable is an open source project, under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+## Contributions
+Contributions are welcome! See [Contributor's Guide](contributors.md)
