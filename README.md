@@ -11,7 +11,7 @@ On every check-in or a pull request, GoCD Mergable action verifies whether modif
 
 ## Usage
 
-See [action.yml](https://github.com/actions/gocd-mergable/blob/master/action.yml) For comprehensive list of options.
+See [action.yml](https://github.com/GaneshSPatil/gocd-mergable/blob/master/action.yml) For comprehensive list of options.
 
 #### Basic 
 
@@ -29,7 +29,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
       - name: Verify Config Merge
-        uses: GaneshSPatil/gocd-mergable@master
+        uses: GaneshSPatil/gocd-mergable@v1.0.0
         with:
           GOCD_SERVER_URL: 'https://build.gocd.org/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
@@ -49,7 +49,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
       - name: Verify Config Merge
-        uses: GaneshSPatil/gocd-mergable@master
+        uses: GaneshSPatil/gocd-mergable@v1.0.0
         with:
           GOCD_SERVER_URL: 'https://build.gocd.org/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
@@ -76,7 +76,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
       - name: Verify Config Merge
-        uses: GaneshSPatil/gocd-mergable@master
+        uses: GaneshSPatil/gocd-mergable@v1.0.0
         with:
           GOCD_SERVER_URL: 'https://build.gocd.org/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
@@ -93,7 +93,15 @@ jobs:
 
 ![GoCD Mergable Failed Output](images/failure.png "GoCD Mergable Failed!") 
 
-## Example:
+## A note about security
+
+GoCD Mergable Github Action when enabled for [GoCD groovy DSL plugin](https://github.com/gocd-contrib/gocd-groovy-dsl-config-plugin), will evaluate untrusted code on the GoCD server. As evaluating the groovy code in a sandbox is currently a work in progress for groovy plugin.
+
+Enabling GoCD Mergable Github Action for pull requests on a groovy config public repository can allow a malicious Github user to do significant damage by running a script as part of the pull request that steal keys and secrets, remove files and directories, install malware, etc on the GoCD Server.  
+
+It is recommended to configure GoCD Mergable Github Action to be executed only on trusted check-ins. 
+
+## Example
 
 Checkout GoCD Mergable YAML Example [master](https://github.com/GaneshSPatil/gocd-mergable-yaml-example) branch and [pull request](https://github.com/GaneshSPatil/gocd-mergable-yaml-example/pull/1) for live examples.
 
