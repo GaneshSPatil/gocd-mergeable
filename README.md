@@ -83,6 +83,16 @@ jobs:
           GOCD_CONFIG_REPOSITORY_ID: 'plugin-api.go.cd-pipelines-yaml'
 ```
 
+## Output
+
+1. Following is an example of successful GoCD Mergable run, when the config repository configurations are valid and can be successfully merged with GoCD.
+
+![GoCD Mergable Success Output](images/success.png "GoCD Mergable Success!")
+
+2. Following is an example of failed GoCD Mergable run, when the config repository configurations has some errors (and/or is invalid).
+
+![GoCD Mergable Failed Output](images/failure.png "GoCD Mergable Failed!") 
+
 ## License
 
 GoCD Mergable is an open source project, under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
