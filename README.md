@@ -93,6 +93,10 @@ jobs:
 
 ![GoCD Mergable Failed Output](images/failure.png "GoCD Mergable Failed!") 
 
+## Example:
+
+Checkout GoCD Mergable YAML Example [master](https://github.com/GaneshSPatil/gocd-mergable-yaml-example) branch and [pull request](https://github.com/GaneshSPatil/gocd-mergable-yaml-example/pull/1) for live examples.
+
 ## License
 
 GoCD Mergable is an open source project, under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
