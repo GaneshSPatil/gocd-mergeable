@@ -1,6 +1,6 @@
 environments:
-  example:
+  prod:
     environment_variables:
-      EXAMPLE_DEPLOYMENT: testing
+      DEPLOYMENT_ENV: prod
     pipelines:
-      - yaml-example-2
+      - deploy-payment-gateway
