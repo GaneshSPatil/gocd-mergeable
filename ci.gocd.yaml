@@ -18,7 +18,7 @@ pipelines:
               tasks:
                 - exec: # indicates type of task
                     command: make
-            - build: # name of the job
+            - build2: # name of the job
               tasks:
                 - exec: # indicates type of task
                     command: make
