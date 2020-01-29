@@ -2,13 +2,13 @@ name: 'GoCD Mergeable'
 description: 'Verifies the config repository changes can be merged with GoCD configuration'
 inputs:
   GOCD_SERVER_URL:
-    description: 'The GoCD Server URL.'
+    description: 'The GoCD Server URL. It must end with `/go` webapp context.'
     required: true
   GOCD_ADMIN_ACCESS_TOKEN:
     description: 'The GoCD System Administrator access token.'
     required: true
   GOCD_CONFIG_REPOSITORY_ID:
-    description: 'The GoCD Config Repository Id.'
+    description: 'The GoCD Config Repository Id. The config repository with the specified id must be present on GoCD Server.'
     required: true
 runs:
   using: 'node12'

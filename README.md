@@ -31,9 +31,9 @@ jobs:
       - name: Verify Config Merge
         uses: GaneshSPatil/gocd-mergeable@v1.0.0
         with:
-          GOCD_SERVER_URL: 'https://build.gocd.org/go'
+          GOCD_SERVER_URL: 'https://gocdserverurl.com/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
-          GOCD_CONFIG_REPOSITORY_ID: 'plugin-api.go.cd-pipelines-yaml'
+          GOCD_CONFIG_REPOSITORY_ID: 'config-repo-id'
 ```
 
 #### Validate on pull requests
@@ -51,9 +51,9 @@ jobs:
       - name: Verify Config Merge
         uses: GaneshSPatil/gocd-mergeable@v1.0.0
         with:
-          GOCD_SERVER_URL: 'https://build.gocd.org/go'
+          GOCD_SERVER_URL: 'https://gocdserverurl.com/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
-          GOCD_CONFIG_REPOSITORY_ID: 'plugin-api.go.cd-pipelines-yaml'
+          GOCD_CONFIG_REPOSITORY_ID: 'config-repo-id'
 ```
 
 #### Trigger validation only when configurations changes
@@ -78,9 +78,9 @@ jobs:
       - name: Verify Config Merge
         uses: GaneshSPatil/gocd-mergeable@v1.0.0
         with:
-          GOCD_SERVER_URL: 'https://build.gocd.org/go'
+          GOCD_SERVER_URL: 'https://gocdserverurl.com/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
-          GOCD_CONFIG_REPOSITORY_ID: 'plugin-api.go.cd-pipelines-yaml'
+          GOCD_CONFIG_REPOSITORY_ID: 'config-repo-id'
 ```
 
 ## Output
