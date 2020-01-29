@@ -1,17 +1,17 @@
-# 🚀 GoCD Mergable - Github Action
+# 🚀 GoCD mergeable - Github Action
 
-[![Build Status](https://travis-ci.org/GaneshSPatil/gocd-mergable.svg?branch=master)](https://travis-ci.org/GaneshSPatil/gocd-mergable)
-[![Coverage Status](https://coveralls.io/repos/github/GaneshSPatil/gocd-mergable/badge.svg)](https://coveralls.io/github/GaneshSPatil/gocd-mergable)
-[![Greenkeeper badge](https://badges.greenkeeper.io/GaneshSPatil/gocd-mergable.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/GaneshSPatil/gocd-mergeable.svg?branch=master)](https://travis-ci.org/GaneshSPatil/gocd-mergeable)
+[![Coverage Status](https://coveralls.io/repos/github/GaneshSPatil/gocd-mergeable/badge.svg)](https://coveralls.io/github/GaneshSPatil/gocd-mergeable)
+[![Greenkeeper badge](https://badges.greenkeeper.io/GaneshSPatil/gocd-mergeable.svg)](https://greenkeeper.io/)
 
 A Github Action for verifying changes done to the GoCD config repository. 
 
-On every check-in or a pull request, GoCD Mergable action verifies whether modifications done to the GoCD configuration files are valid or not by performing the [GoCD preflight check](https://api.gocd.org/current/#preflight-check-of-config-repo-configurations) on the specified config repository.  
+On every check-in or a pull request, GoCD mergeable action verifies whether modifications done to the GoCD configuration files are valid or not by performing the [GoCD preflight check](https://api.gocd.org/current/#preflight-check-of-config-repo-configurations) on the specified config repository.  
 
 
 ## Usage
 
-See [action.yml](https://github.com/GaneshSPatil/gocd-mergable/blob/master/action.yml) For comprehensive list of options.
+See [action.yml](https://github.com/GaneshSPatil/gocd-mergeable/blob/master/action.yml) For comprehensive list of options.
 
 #### Basic 
 
@@ -29,7 +29,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
       - name: Verify Config Merge
-        uses: GaneshSPatil/gocd-mergable@v1.0.0
+        uses: GaneshSPatil/gocd-mergeable@v1.0.0
         with:
           GOCD_SERVER_URL: 'https://build.gocd.org/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
@@ -49,7 +49,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
       - name: Verify Config Merge
-        uses: GaneshSPatil/gocd-mergable@v1.0.0
+        uses: GaneshSPatil/gocd-mergeable@v1.0.0
         with:
           GOCD_SERVER_URL: 'https://build.gocd.org/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
@@ -59,7 +59,7 @@ jobs:
 #### Trigger validation only when configurations changes
 
 GoCD's pipeline as code allows the pipeline configurations to be defined where the source is (same git repository).
-But we often don't make changes to the pipeline configurations and thus can avoid GoCD mergable bot check by whitelisting the config files. 
+But we often don't make changes to the pipeline configurations and thus can avoid GoCD mergeable bot check by whitelisting the config files. 
 
 ```yaml
 on:
@@ -76,7 +76,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
       - name: Verify Config Merge
-        uses: GaneshSPatil/gocd-mergable@v1.0.0
+        uses: GaneshSPatil/gocd-mergeable@v1.0.0
         with:
           GOCD_SERVER_URL: 'https://build.gocd.org/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
@@ -85,29 +85,29 @@ jobs:
 
 ## Output
 
-1. Following is an example of successful GoCD Mergable run, when the config repository configurations are valid and can be successfully merged with GoCD.
+1. Following is an example of successful GoCD mergeable run, when the config repository configurations are valid and can be successfully merged with GoCD.
 
-![GoCD Mergable Success Output](images/success.png "GoCD Mergable Success!")
+![GoCD mergeable Success Output](images/success.png "GoCD mergeable Success!")
 
-2. Following is an example of failed GoCD Mergable run, when the config repository configurations has some errors (and/or is invalid).
+2. Following is an example of failed GoCD mergeable run, when the config repository configurations has some errors (and/or is invalid).
 
-![GoCD Mergable Failed Output](images/failure.png "GoCD Mergable Failed!") 
+![GoCD mergeable Failed Output](images/failure.png "GoCD mergeable Failed!") 
 
 ## A note about security
 
-GoCD Mergable Github Action when enabled for [GoCD groovy DSL plugin](https://github.com/gocd-contrib/gocd-groovy-dsl-config-plugin), will evaluate untrusted code on the GoCD server. As evaluating the groovy code in a sandbox is currently a work in progress for groovy plugin.
+GoCD mergeable Github Action when enabled for [GoCD groovy DSL plugin](https://github.com/gocd-contrib/gocd-groovy-dsl-config-plugin), will evaluate untrusted code on the GoCD server. As evaluating the groovy code in a sandbox is currently a work in progress for groovy plugin.
 
-Enabling GoCD Mergable Github Action for pull requests on a groovy config public repository can allow a malicious Github user to do significant damage by running a script as part of the pull request that steal keys and secrets, remove files and directories, install malware, etc on the GoCD Server.  
+Enabling GoCD mergeable Github Action for pull requests on a groovy config public repository can allow a malicious Github user to do significant damage by running a script as part of the pull request that steal keys and secrets, remove files and directories, install malware, etc on the GoCD Server.  
 
-It is recommended to configure GoCD Mergable Github Action to be executed only on trusted check-ins. 
+It is recommended to configure GoCD mergeable Github Action to be executed only on trusted check-ins. 
 
 ## Example
 
-Checkout GoCD Mergable YAML Example [master](https://github.com/GaneshSPatil/gocd-mergable-yaml-example) branch and [pull request](https://github.com/GaneshSPatil/gocd-mergable-yaml-example/pull/1) for live examples.
+Checkout GoCD mergeable YAML Example [master](https://github.com/GaneshSPatil/gocd-mergeable-yaml-example) branch and [pull request](https://github.com/GaneshSPatil/gocd-mergeable-yaml-example/pull/1) for live examples.
 
 ## License
 
-GoCD Mergable is an open source project, under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+GoCD mergeable is an open source project, under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 ## Contributions
 Contributions are welcome! See [Contributor's Guide](contributors.md)
