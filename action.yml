@@ -1,4 +1,4 @@
-name: 'GoCD Verify Config Repository'
+name: 'GoCD Mergeable'
 description: 'Verifies the config repository changes can be merged with GoCD configuration'
 inputs:
   GOCD_SERVER_URL:
