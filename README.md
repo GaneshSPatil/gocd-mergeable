@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/GaneshSPatil/gocd-mergeable.svg?branch=master)](https://travis-ci.org/GaneshSPatil/gocd-mergeable)
 [![Coverage Status](https://coveralls.io/repos/github/GaneshSPatil/gocd-mergeable/badge.svg)](https://coveralls.io/github/GaneshSPatil/gocd-mergeable)
 [![Greenkeeper badge](https://badges.greenkeeper.io/GaneshSPatil/gocd-mergeable.svg)](https://greenkeeper.io/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGaneshSPatil%2Fgocd-mergeable.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FGaneshSPatil%2Fgocd-mergeable?ref=badge_shield)
 
 A Github Action for verifying changes done to the GoCD config repository. 
 
@@ -108,6 +109,9 @@ Checkout GoCD mergeable YAML Example [master](https://github.com/GaneshSPatil/go
 ## License
 
 GoCD mergeable is an open source project, under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGaneshSPatil%2Fgocd-mergeable.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FGaneshSPatil%2Fgocd-mergeable?ref=badge_large)
 
 ## Contributions
 Contributions are welcome! See [Contributor's Guide](contributors.md)
