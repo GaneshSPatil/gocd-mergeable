@@ -5,7 +5,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/GaneshSPatil/gocd-mergeable.svg)](https://greenkeeper.io/)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FGaneshSPatil%2Fgocd-mergeable.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FGaneshSPatil%2Fgocd-mergeable?ref=badge_shield)
 
-A Github Action for verifying changes done to the GoCD config repository. 
+A Github Action for verifying changes done to the GoCD config repository.
 
 On every check-in or a pull request, GoCD mergeable action verifies whether modifications done to the GoCD configuration files are valid or not by performing the [GoCD preflight check](https://api.gocd.org/current/#preflight-check-of-config-repo-configurations) on the specified config repository.  
 
@@ -14,9 +14,13 @@ On every check-in or a pull request, GoCD mergeable action verifies whether modi
 
 See [action.yml](https://github.com/GaneshSPatil/gocd-mergeable/blob/master/action.yml) For comprehensive list of options.
 
-#### Basic 
+## Example
 
-*Note:* Do not specify `GOCD_ADMIN_ACCESS_TOKEN` as a plain text value. 
+Checkout GoCD mergeable YAML Example [master](https://github.com/GaneshSPatil/gocd-mergeable-yaml-example) branch and [pull request](https://github.com/GaneshSPatil/gocd-mergeable-yaml-example/pull/1) for live examples.
+
+#### Basic
+
+*Note:* Do not specify `GOCD_ADMIN_ACCESS_TOKEN` as a plain text value.
 Use [Github Secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets) for specifying the secret access token.
 
 ```yaml
@@ -60,7 +64,7 @@ jobs:
 #### Trigger validation only when configurations changes
 
 GoCD's pipeline as code allows the pipeline configurations to be defined where the source is (same git repository).
-But we often don't make changes to the pipeline configurations and thus can avoid GoCD mergeable bot check by whitelisting the config files. 
+But we often don't make changes to the pipeline configurations and thus can avoid GoCD mergeable bot check by whitelisting the config files.
 
 ```yaml
 on:
@@ -92,19 +96,17 @@ jobs:
 
 2. Following is an example of failed GoCD mergeable run, when the config repository configurations has some errors (and/or is invalid).
 
-![GoCD mergeable Failed Output](images/failure.png "GoCD mergeable Failed!") 
+![GoCD mergeable Failed Output](images/failure.png "GoCD mergeable Failed!")
 
 ## A note about security
 
-GoCD mergeable Github Action when enabled for [GoCD groovy DSL plugin](https://github.com/gocd-contrib/gocd-groovy-dsl-config-plugin), will evaluate untrusted code on the GoCD server. As evaluating the groovy code in a sandbox is currently a work in progress for groovy plugin.
+[YAML](https://github.com/tomzo/gocd-yaml-config-plugin) and [JSON](https://github.com/tomzo/gocd-json-config-plugin) plugins do not execute *user code* because they only parse yaml and json files with pipeline definitions. However, [GoCD groovy DSL plugin](https://github.com/gocd-contrib/gocd-groovy-dsl-config-plugin) will evaluate untrusted code on the GoCD server, so beware of the risk that involves:
 
-Enabling GoCD mergeable Github Action for pull requests on a groovy config public repository can allow a malicious Github user to do significant damage by running a script as part of the pull request that steal keys and secrets, remove files and directories, install malware, etc on the GoCD Server.  
+Enabling GoCD mergeable Github Action for pull requests on a groovy config public repository can allow a malicious Github user to do **significant damage by running a script as part of the pull request that steal keys and secrets, remove files and directories, install malware, etc on the GoCD Server**.  
 
-It is recommended to configure GoCD mergeable Github Action to be executed only on trusted check-ins. 
+It is recommended to configure GoCD mergeable Github Action to be executed only on trusted check-ins.
 
-## Example
-
-Checkout GoCD mergeable YAML Example [master](https://github.com/GaneshSPatil/gocd-mergeable-yaml-example) branch and [pull request](https://github.com/GaneshSPatil/gocd-mergeable-yaml-example/pull/1) for live examples.
+Evaluating the groovy code in a sandbox is currently a work in progress for the groovy plugin.
 
 ## License
 
