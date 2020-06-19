@@ -1,6 +1,6 @@
 {
   "name": "gocd-mergeable",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Github Action to verify changes done to the config repository",
   "main": "index.js",
   "scripts": {
@@ -20,16 +20,15 @@
   },
   "homepage": "https://github.com/GaneshSPatil/gocd-mergeable#readme",
   "dependencies": {
-    "@actions/core": "^1.2.1",
-    "@actions/github": "^2.0.1",
+    "@actions/core": "^1.2.4",
     "glob": "^7.1.6",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "request-promise": "^4.2.5"
   },
   "devDependencies": {
     "assertthat": "^5.1.0",
     "coveralls": "^3.0.9",
-    "mocha": "^7.0.0",
+    "mocha": "^8.0.1",
     "mock-fs": "^4.10.4",
     "nock": "^12.0.0",
     "nyc": "^15.0.0"

@@ -34,7 +34,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
       - name: Verify Config Merge
-        uses: GaneshSPatil/gocd-mergeable@v1.0.0
+        uses: GaneshSPatil/gocd-mergeable@v1.1.0
         with:
           GOCD_SERVER_URL: 'https://gocdserverurl.com/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
@@ -54,7 +54,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
       - name: Verify Config Merge
-        uses: GaneshSPatil/gocd-mergeable@v1.0.0
+        uses: GaneshSPatil/gocd-mergeable@v1.1.0
         with:
           GOCD_SERVER_URL: 'https://gocdserverurl.com/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
@@ -81,7 +81,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
       - name: Verify Config Merge
-        uses: GaneshSPatil/gocd-mergeable@v1.0.0
+        uses: GaneshSPatil/gocd-mergeable@v1.1.0
         with:
           GOCD_SERVER_URL: 'https://gocdserverurl.com/go'
           GOCD_ADMIN_ACCESS_TOKEN: ${{ secrets.GOCD_ADMIN_ACCESS_TOKEN }}
