@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/GaneshSPatil/gocd-mergeable#readme",
   "dependencies": {
-    "@actions/core": "^1.2.4",
+    "@actions/core": "^1.2.6",
     "glob": "^7.1.6",
     "request": "^2.88.2",
     "request-promise": "^4.2.5"
